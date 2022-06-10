@@ -98,6 +98,13 @@ int main()
     cap.set(3,1080);
     cap.set(4,720);
 
+    Point2f origin_point;
+    Point2f current_point(0,0);
+
+
+    std::vector<Point2f> track;
+
+
     while (cap.isOpened())
     {
         Mat frame;
@@ -123,6 +130,21 @@ int main()
         {
             mc[i] = Point2f(mu[i].m10/mu[i].m00,mu[i].m01/mu[i].m00);
         }
+        origin_point = mc[0];
+
+        //if the current point is 3 pixel away from the origin point, then update the current point
+        if(abs(origin_point.x - current_point.x) > 3 || abs(origin_point.y - current_point.y) > 3)
+        {
+            current_point = origin_point;
+            track.push_back(current_point); // push the current point to the track vector
+        }
+
+        //draw the track
+        for(int i = 0; i < track.size(); i++)
+        {
+            circle(frame,track[i],2,Scalar(100,100,100),-1);
+        }
+
         circle(frame,mc[0],5,Scalar(255,0,0),-1); //center of the hand
 
 
