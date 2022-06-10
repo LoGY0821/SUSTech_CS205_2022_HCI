@@ -15,9 +15,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72d848e5-1cea-4562-b0b6-673fbf1083e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/SUSTech_CS205_2022_HCI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cameraTest.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cameraTest.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C_Test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/C_Test.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameraTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cameraTest.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,30 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Harry" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="open" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -57,11 +84,6 @@
 }</component>
   <component name="RunManager" selected="CMake Application.C_Test">
     <configuration name="C_Test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C_Test" TARGET_NAME="C_Test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="C_Test" RUN_TARGET_NAME="C_Test">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -103,7 +125,9 @@
       <workItem from="1654405129537" duration="4379000" />
       <workItem from="1654409683968" duration="136000" />
       <workItem from="1654501876307" duration="3784000" />
-      <workItem from="1654505694999" duration="3808000" />
+      <workItem from="1654505694999" duration="5485000" />
+      <workItem from="1654669183631" duration="4626000" />
+      <workItem from="1654866236793" duration="2598000" />
     </task>
     <servers />
   </component>
@@ -115,10 +139,33 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Harry" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/cameraTest.cpp</url>
+          <line>140</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

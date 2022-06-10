@@ -26,7 +26,7 @@ void getSkin(Mat& ImageIn, Mat& Binary)
 void getHand(Mat& Binary,std::vector<Point>& hand)
 {
     std::vector<std::vector<Point>> contours;
-    findContours(Binary, contours,RETR_EXTERNAL,CHAIN_APPROX_SIMPLE,Point());//提取出所有的轮廓
+    findContours(Binary, contours,RETR_EXTERNAL,CHAIN_APPROX_NONE,Point(0,0));//提取出所有的轮廓
     if(contours.size() != 0) //如果图片中的轮廓不唯一
     {
         int max_contour = 0;
@@ -52,11 +52,13 @@ void getHand(Mat& Binary,std::vector<Point>& hand)
  */
 
 //calculate Fourier Descriptor
+//暂时还没用，就是写到这了，后面要用神经网络了 https://blog.csdn.net/qq_42884797/article/details/110917941
 void getFourierDescriptor(std::vector<Point>& hand, Mat& FourierDescriptor)
 {
     Point P;
     std::vector<float> f;
     std::vector<float> fd;
+    Mat src1(Size(hand.size(),1),CV_8SC2);
     for(int i = 0; i < hand.size(); i++)
     {
         float x,y,sumx=0,sumy=0;
@@ -68,40 +70,80 @@ void getFourierDescriptor(std::vector<Point>& hand, Mat& FourierDescriptor)
             sumx += (float)(x * cos(2 * CV_PI * i * j / hand.size()) + y * sin(2 * CV_PI * i * j / hand.size()));
             sumy += (float)(-x * sin(2 * CV_PI * i * j / hand.size()) + y * cos(2 * CV_PI * i * j / hand.size()));
         }
-        f.push_back(sqrt(sumx * sumx + sumy * sumy));
+        f.push_back(sqrt(sumx * sumx + sumy * sumy)); //求每个特征的模
+
     }
 
-    fd.push_back(0);
+    fd.push_back(0); //0位标志位
 
+    //进行归一化
+    for(int k = 2; k <16; k++)
+    {
+        f[k] = f[k] /f[1];
+        fd.push_back(f[k]);
+    }
+
+    FourierDescriptor = Mat::zeros(1,fd.size(),CV_32F);//CV32_F  float -像素是在0-1.0之间的任意值，这对于一些数据集的计算很有用，但是它必须通过将每个像素乘以255来转换成8位来保存或显示。
+
+    for(int i = 0; i < fd.size(); i++)
+    {
+        FourierDescriptor.at<float>(i) = fd[i];
+    }
 
 }
 
 int main()
 {
-    cv::VideoCapture cap(1);
+    cv::VideoCapture cap(0);
     cap.set(3,1080);
     cap.set(4,720);
 
     while (cap.isOpened())
     {
         Mat frame;
-        cap >> frame;
+        cap >> frame; //读取画面
         Mat binary;
-        getSkin(frame,binary);
+        getSkin(frame,binary); //将图片二值化，并初步提取出手
         std::vector<Point> hand;
-        getHand(binary,hand);
-        Mat hand_image = Mat::zeros(binary.size(),CV_8UC1);
-        Mat binary_image = Mat::zeros(binary.size(),CV_8UC1);
-        for(int i = 0; i < hand.size();i++)
+        getHand(binary,hand); //找到二值图像的最大边界，应该就是手了。
+
+        std::vector<std::vector<Point>> hand_contours;
+        hand_contours.push_back(hand);
+        drawContours(frame,hand_contours,0,Scalar(0,0,255),2,8); //drawContours 不能过assertion，原因未知，不能正常显示
+
+
+        //get the center of hand
+        std::vector<Moments> mu(hand.size());
+        for(int i = 0; i < hand.size(); i++)
         {
-            Point P = Point(hand[i].x,hand[i].y);
-            hand_image.at<uchar>(P) = 255;
+            mu[i] = moments(hand,false);
         }
-        imshow("hand_image",hand_image);
-        //drawContours(frame,hand,0,Scalar(0,0,255),2,8); //drawContours 有问题，不能正常显示
-        imshow("hand", frame);
+        std::vector<Point2f> mc(hand.size());
+        for(int i = 0; i < hand.size(); i++)
+        {
+            mc[i] = Point2f(mu[i].m10/mu[i].m00,mu[i].m01/mu[i].m00);
+        }
+        circle(frame,mc[0],5,Scalar(255,0,0),-1); //center of the hand
+
+
+        //get the bounding area of hand
+        Rect rect = boundingRect(hand); //boundingRect 返回手的最小矩形区域
+        rectangle(frame,rect,Scalar(0,255,0),2,8); //draw the boundingRect
+        //Mirror the frame symmetrically
+        Mat frame_mirror;
+        flip(frame,frame_mirror,1);
+
+
+        imshow("origin", frame_mirror);
+
+//        //do the fourier descriptor and show the result
+//        Mat FourierDescriptor;
+//        getFourierDescriptor(hand,FourierDescriptor);
+//        imshow("FourierDescriptor",FourierDescriptor);
+
+
         if (cv::waitKey(30) >= 0)
-        {         
+        {
             break;
         }
     }
