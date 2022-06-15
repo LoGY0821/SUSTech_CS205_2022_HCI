@@ -1,0 +1,3 @@
+/home/logy/文档/HCI/CMakeFiles/rebuild_cache.dir
+/home/logy/文档/HCI/CMakeFiles/edit_cache.dir
+/home/logy/文档/HCI/CMakeFiles/C_Test.dir
