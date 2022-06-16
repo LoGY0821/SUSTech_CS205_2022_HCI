@@ -2,21 +2,26 @@
 using namespace cv;
 
 // get the area whose color is similar to hand color
+// void getSkin(Mat &ImageIn, Mat &Binary)
+// {
+//     Mat Image = ImageIn.clone();
+//     Mat ycrcb_Image;
+//     cvtColor(Image, ycrcb_Image, COLOR_BGR2YCrCb); //转换色彩空间
+//     std::vector<Mat> y_cr_cb;
+//     split(ycrcb_Image, y_cr_cb); //分离YCrCb
+//     Mat CR = y_cr_cb[1]; //图片的CR分量
+//     Mat CR1;
+//     Binary = Mat::zeros(Image.size(), CV_8UC1);
+//     GaussianBlur(CR, CR1, Size(3, 3), 0, 0);     //对CR分量进行高斯滤波，得到CR1（注意这里一定要新建一张图片存放结果）
+//     threshold(CR1, Binary, 0, 255, THRESH_OTSU); //用系统自带的threshold函数，对CR分量进行二值化，算法为自适应阈值的OTSU算法
+// }
+
 void getSkin(Mat &ImageIn, Mat &Binary)
 {
     Mat Image = ImageIn.clone();
-    Mat ycrcb_Image;
-    cvtColor(Image, ycrcb_Image, COLOR_BGR2YCrCb); //转换色彩空间
-
-    std::vector<Mat> y_cr_cb;
-    split(ycrcb_Image, y_cr_cb); //分离YCrCb
-
-    Mat CR = y_cr_cb[1]; //图片的CR分量
-    Mat CR1;
-
-    Binary = Mat::zeros(Image.size(), CV_8UC1);
-    GaussianBlur(CR, CR1, Size(3, 3), 0, 0);     //对CR分量进行高斯滤波，得到CR1（注意这里一定要新建一张图片存放结果）
-    threshold(CR1, Binary, 0, 255, THRESH_OTSU); //用系统自带的threshold函数，对CR分量进行二值化，算法为自适应阈值的OTSU算法
+    Mat hsvImage;
+    cvtColor(Image, hsvImage, COLOR_BGR2HSV); //转换色彩空间
+    inRange(hsvImage, Scalar(0, 43, 55), Scalar(25, 255, 255), Binary);
 }
 
 // get the contour of hand through a set of contours, according to the area of contours
@@ -50,8 +55,14 @@ void getHand(Mat &Binary, std::vector<Point> &hand)
 
 void drawHand(Mat &frame, std::vector<Point> &hand, std::vector<std::vector<Point>> hand_contours)
 {
-    hand_contours.push_back(hand);
-    drawContours(frame, hand_contours, 0, Scalar(0, 0, 255), 2, 8);
+    if (hand.size() != 0)
+    {
+        hand_contours.push_back(hand);
+    }
+    if (hand_contours.size() != 0)
+    {
+        drawContours(frame, hand_contours, 0, Scalar(0, 0, 255), 2, 8);
+    }
 }
 
 void calcMoment(std::vector<Point> &hand, std::vector<Point2f> &mc)
@@ -121,27 +132,34 @@ int main()
 
     while (cap.isOpened())
     {
+        //读取画面
         Mat frame;
-        cap >> frame; //读取画面
-        Mat binary;
-        getSkin(frame, binary); //将图片二值化，并初步提取出手
-        std::vector<Point> hand;
-        getHand(binary, hand); //找到二值图像的最大边界，应该就是手了。
+        cap >> frame;
         std::vector<std::vector<Point>> hand_contours;
+        //将图片二值化，并初步提取出手
+        Mat binary;
+        getSkin(frame, binary);
+        std::vector<Point> hand;
+        //找到二值图像的最大边界，应该就是手了。
+        getHand(binary, hand);
+        // Draw the hand contour
         drawHand(frame, hand, hand_contours);
         // get the center of hand
-        std::vector<Point2f> mc(hand.size());
-        calcMoment(hand, mc);
-        origin_point = mc[0];
-        // if the current point is 3 pixel away from the origin point, then update the current point
-        recordPoint(origin_point, track);
-        // draw the track
-        drawTrace(track, frame);
-        // center of the hand
-        circle(frame, mc[0], 5, Scalar(255, 0, 0), -1);
-        // get the bounding area of hand
-        Rect rect = boundingRect(hand);                  // boundingRect 返回手的最小矩形区域
-        rectangle(frame, rect, Scalar(0, 255, 0), 2, 8); // draw the boundingRect
+        if (hand.size() != 0)
+        {
+            std::vector<Point2f> mc(hand.size());
+            calcMoment(hand, mc);
+            origin_point = mc[0];
+            // if the current point is 3 pixel away from the origin point, then update the current point
+            recordPoint(origin_point, track);
+            // draw the track
+            drawTrace(track, frame);
+            // center of the hand
+            circle(frame, mc[0], 5, Scalar(255, 0, 0), -1);
+            // get the bounding area of hand
+            Rect rect = boundingRect(hand);                  // boundingRect 返回手的最小矩形区域
+            rectangle(frame, rect, Scalar(0, 255, 0), 2, 8); // draw the boundingRect
+        }
         // Mirror the frame symmetrically
         Mat frame_mirror;
         flip(frame, frame_mirror, 1);
