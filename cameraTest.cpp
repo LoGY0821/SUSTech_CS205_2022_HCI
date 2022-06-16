@@ -1,5 +1,6 @@
 #include <opencv2/opencv.hpp>
 using namespace cv;
+#include <time.h>
 
 // get the area whose color is similar to hand color
 // void getSkin(Mat &ImageIn, Mat &Binary)
@@ -98,7 +99,7 @@ void drawTrace(std::vector<Point2f> &track, Mat &frame)
 
 void shapeRecog(std::vector<Point2f> &track, std::vector<Point2f> &output, std::string &shape)
 {
-    approxPolyDP(track, output, 10, true);
+    approxPolyDP(track, output, 20, true);
     int count = (int)output.size();
     switch (count)
     {
@@ -119,6 +120,8 @@ void shapeRecog(std::vector<Point2f> &track, std::vector<Point2f> &output, std::
 
 int main()
 {
+    clock_t start, now;
+    start = clock();
     int wide = 480;
     int height = 640;
     cv::VideoCapture cap(0);
@@ -160,11 +163,21 @@ int main()
             Rect rect = boundingRect(hand);                  // boundingRect 返回手的最小矩形区域
             rectangle(frame, rect, Scalar(0, 255, 0), 2, 8); // draw the boundingRect
         }
-        // Mirror the frame symmetrically
-        Mat frame_mirror;
-        flip(frame, frame_mirror, 1);
+        now = clock();
+        std::vector<Point2f> output;
+        std::string shape;
+        if (double(now - start) / CLOCKS_PER_SEC >= 5)
+        {
+            shapeRecog(track, output, shape);
+            drawContours(frame, output, -1, Scalar(0, 255, 255), 2, 8);
+        }
 
-        imshow("origin", frame_mirror);
+        // Mirror the frame symmetrically
+        // Mat frame_mirror;
+        // flip(frame, frame_mirror, 1);
+
+        // imshow("origin", frame_mirror);
+        imshow("origin", frame);
 
         if (cv::waitKey(30) >= 0)
         {
