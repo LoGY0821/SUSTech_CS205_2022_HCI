@@ -48,11 +48,71 @@ void getHand(Mat &Binary, std::vector<Point> &hand)
  * 若使用cv::drawContours函数时可能会返回上述错误。
  */
 
+void drawHand(Mat &frame, std::vector<Point> &hand, std::vector<std::vector<Point>> hand_contours)
+{
+    hand_contours.push_back(hand);
+    drawContours(frame, hand_contours, 0, Scalar(0, 0, 255), 2, 8);
+}
+
+void calcMoment(std::vector<Point> &hand, std::vector<Point2f> &mc)
+{
+    std::vector<Moments> mu(hand.size());
+    for (int i = 0; i < hand.size(); i++)
+    {
+        mu[i] = moments(hand, false);
+    }
+    for (int i = 0; i < hand.size(); i++)
+    {
+        mc[i] = Point2f(mu[i].m10 / mu[i].m00, mu[i].m01 / mu[i].m00);
+    }
+}
+
+void recordPoint(Point2f &point, std::vector<Point2f> &track)
+{
+    Point2f current_point(0, 0);
+    if (abs(point.x - current_point.x) > 3 || abs(point.y - current_point.y) > 3)
+    {
+        current_point = point;
+        track.push_back(current_point); // push the current point to the track vector
+    }
+}
+
+void drawTrace(std::vector<Point2f> &track, Mat &frame)
+{
+    for (int i = 0; i < track.size(); i++)
+    {
+        circle(frame, track[i], 2, Scalar(100, 100, 100), -1);
+    }
+}
+
+void shapeRecog(std::vector<Point2f> &track, std::vector<Point2f> &output, std::string &shape)
+{
+    approxPolyDP(track, output, 10, true);
+    int count = (int)output.size();
+    switch (count)
+    {
+    case 3:
+        shape = "Triangle";
+        break;
+    case 4:
+        shape = "Square";
+        break;
+    case 5:
+        shape = "Pentagon";
+        break;
+    default:
+        shape = "Circle";
+        break;
+    }
+}
+
 int main()
 {
+    int wide = 480;
+    int height = 640;
     cv::VideoCapture cap(0);
-    cap.set(3, 1080);
-    cap.set(4, 720);
+    cap.set(3, height);
+    cap.set(4, wide);
 
     Point2f origin_point;
     Point2f current_point(0, 0);
@@ -67,39 +127,18 @@ int main()
         getSkin(frame, binary); //将图片二值化，并初步提取出手
         std::vector<Point> hand;
         getHand(binary, hand); //找到二值图像的最大边界，应该就是手了。
-
         std::vector<std::vector<Point>> hand_contours;
-        hand_contours.push_back(hand);
-        drawContours(frame, hand_contours, 0, Scalar(0, 0, 255), 2, 8); // drawContours 不能过assertion，原因未知，不能正常显示
-
+        drawHand(frame, hand, hand_contours);
         // get the center of hand
-        std::vector<Moments> mu(hand.size());
-        for (int i = 0; i < hand.size(); i++)
-        {
-            mu[i] = moments(hand, false);
-        }
         std::vector<Point2f> mc(hand.size());
-        for (int i = 0; i < hand.size(); i++)
-        {
-            mc[i] = Point2f(mu[i].m10 / mu[i].m00, mu[i].m01 / mu[i].m00);
-        }
+        calcMoment(hand, mc);
         origin_point = mc[0];
-
         // if the current point is 3 pixel away from the origin point, then update the current point
-        if (abs(origin_point.x - current_point.x) > 3 || abs(origin_point.y - current_point.y) > 3)
-        {
-            current_point = origin_point;
-            track.push_back(current_point); // push the current point to the track vector
-        }
-
+        recordPoint(origin_point, track);
         // draw the track
-        for (int i = 0; i < track.size(); i++)
-        {
-            circle(frame, track[i], 2, Scalar(100, 100, 100), -1);
-        }
-
-        circle(frame, mc[0], 5, Scalar(255, 0, 0), -1); // center of the hand
-
+        drawTrace(track, frame);
+        // center of the hand
+        circle(frame, mc[0], 5, Scalar(255, 0, 0), -1);
         // get the bounding area of hand
         Rect rect = boundingRect(hand);                  // boundingRect 返回手的最小矩形区域
         rectangle(frame, rect, Scalar(0, 255, 0), 2, 8); // draw the boundingRect
@@ -108,11 +147,6 @@ int main()
         flip(frame, frame_mirror, 1);
 
         imshow("origin", frame_mirror);
-
-        //        //do the fourier descriptor and show the result
-        //        Mat FourierDescriptor;
-        //        getFourierDescriptor(hand,FourierDescriptor);
-        //        imshow("FourierDescriptor",FourierDescriptor);
 
         if (cv::waitKey(30) >= 0)
         {
