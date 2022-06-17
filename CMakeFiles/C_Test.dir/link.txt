@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/C_Test.dir/cameraTest.cpp.o  -o C_Test  -Wl,-rpath,/usr/local/lib /usr/local/lib/libopencv_highgui.so.3.4.13 /usr/local/lib/libopencv_videoio.so.3.4.13 /usr/local/lib/libopencv_imgcodecs.so.3.4.13 /usr/local/lib/libopencv_imgproc.so.3.4.13 /usr/local/lib/libopencv_core.so.3.4.13 

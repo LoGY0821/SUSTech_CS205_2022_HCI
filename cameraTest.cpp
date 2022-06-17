@@ -79,13 +79,12 @@ void calcMoment(std::vector<Point> &hand, std::vector<Point2f> &mc)
     }
 }
 
-void recordPoint(Point2f &point, std::vector<Point2f> &track)
+void recordPoint(Point2f &point, Point2f &origin_point, std::vector<Point2f> &track)
 {
-    Point2f current_point(0, 0);
-    if (abs(point.x - current_point.x) > 3 || abs(point.y - current_point.y) > 3)
+    if (abs(point.x - origin_point.x) > 5 || abs(point.y - origin_point.y) > 5)
     {
-        current_point = point;
-        track.push_back(current_point); // push the current point to the track vector
+        origin_point = point;
+        track.push_back(origin_point); // push the current point to the track vector
     }
 }
 
@@ -93,13 +92,13 @@ void drawTrace(std::vector<Point2f> &track, Mat &frame)
 {
     for (int i = 0; i < track.size(); i++)
     {
-        circle(frame, track[i], 2, Scalar(100, 100, 100), -1);
+        circle(frame, track[i], 2, Scalar(255, 255, 0), -1);
     }
 }
 
 void shapeRecog(std::vector<Point2f> &track, std::vector<Point2f> &output, std::string &shape)
 {
-    approxPolyDP(track, output, 20, true);
+    approxPolyDP(track, output, 5, true);
     int count = (int)output.size();
     switch (count)
     {
@@ -128,8 +127,8 @@ int main()
     cap.set(3, height);
     cap.set(4, wide);
 
-    Point2f origin_point;
-    Point2f current_point(0, 0);
+    Point2f origin_point(0, 0);
+    Point2f current_point;
 
     std::vector<Point2f> track;
 
@@ -152,9 +151,9 @@ int main()
         {
             std::vector<Point2f> mc(hand.size());
             calcMoment(hand, mc);
-            origin_point = mc[0];
+            current_point = mc[0];
             // if the current point is 3 pixel away from the origin point, then update the current point
-            recordPoint(origin_point, track);
+            recordPoint(current_point, origin_point, track);
             // draw the track
             drawTrace(track, frame);
             // center of the hand
@@ -165,11 +164,12 @@ int main()
         }
         now = clock();
         std::vector<Point2f> output;
-        std::string shape;
+        std::string shape = "null";
         if (double(now - start) / CLOCKS_PER_SEC >= 5)
         {
             shapeRecog(track, output, shape);
-            drawContours(frame, output, -1, Scalar(0, 255, 255), 2, 8);
+            // drawContours(frame, output, -1, Scalar(0, 255, 255), 2, 8);
+            std::cout << shape << std::endl;
         }
 
         // Mirror the frame symmetrically
