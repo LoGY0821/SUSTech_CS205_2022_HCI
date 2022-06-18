@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/Testing/Temporary/HogTraining.cpp" "CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.obj" "gcc" "CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.obj.d"
   "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/cameraTest.cpp" "CMakeFiles/C_Test.dir/cameraTest.cpp.obj" "gcc" "CMakeFiles/C_Test.dir/cameraTest.cpp.obj.d"
   )
 

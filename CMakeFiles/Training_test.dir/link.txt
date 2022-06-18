@@ -1,0 +1,3 @@
+"D:\Productivity\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Training_test.dir/objects.a
+C:\Develop\mingw64\bin\ar.exe qc CMakeFiles\Training_test.dir/objects.a @CMakeFiles\Training_test.dir\objects1.rsp
+C:\Develop\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Training_test.dir/objects.a -Wl,--no-whole-archive -o Training_test.exe -Wl,--out-implib,libTraining_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Training_test.dir\linklibs.rsp

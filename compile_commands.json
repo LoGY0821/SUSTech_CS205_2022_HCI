@@ -3,5 +3,10 @@
   "directory": "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI",
   "command": "C:\\Develop\\mingw64\\bin\\g++.exe  @CMakeFiles/C_Test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\C_Test.dir\\cameraTest.cpp.obj -c \"E:\\Windows\\OneDrive\\Documents\\Self Document\\Programming Base\\CPP\\Project_HCI\\SUSTech_CS205_2022_HCI\\cameraTest.cpp\"",
   "file": "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/cameraTest.cpp"
+},
+{
+  "directory": "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI",
+  "command": "C:\\Develop\\mingw64\\bin\\g++.exe  @CMakeFiles/C_Test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\C_Test.dir\\hull.cpp.obj -c \"E:\\Windows\\OneDrive\\Documents\\Self Document\\Programming Base\\CPP\\Project_HCI\\SUSTech_CS205_2022_HCI\\hull.cpp\"",
+  "file": "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/hull.cpp"
 }
 ]

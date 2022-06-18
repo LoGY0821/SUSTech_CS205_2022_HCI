@@ -1,4 +1,11 @@
-#include <opencv2/opencv.hpp>
+#include <iostream>
+#include <string>
+#include <opencv2\opencv.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/ml.hpp>
+#include <fstream>
+#include <opencv2/imgproc/imgproc_c.h>
 using namespace cv;
 
 //get the area whose color is similar to hand color
@@ -92,6 +99,75 @@ void getFourierDescriptor(std::vector<Point>& hand, Mat& FourierDescriptor)
 
 }
 
+void predictSVM(std::vector<Point>& hand, Mat& frame)
+{
+    Mat FourierDescriptor;
+    getFourierDescriptor(hand,FourierDescriptor);
+    Ptr<ml::SVM> psvm = ml::SVM::create();
+    psvm= Algorithm::load<ml::SVM>("./svm_model.xml");
+    int match = int (psvm->predict(FourierDescriptor));
+    //show the result in the left top corner of frame
+    putText(frame, std::to_string(match), Point(10, 60), FONT_HERSHEY_SIMPLEX, 2, Scalar(0, 0, 255), 2);
+
+}
+
+
+//blur the erode image and get the contour and find the convexhull return the size of convexhull
+int getConvexHull(Mat& Binary, Mat& frame)
+{
+    Mat Binary_erode;
+    //the kernel is 5x5, all the element is 1
+    Mat kernel = Mat::ones(10,10,CV_8UC1);
+
+    erode(Binary, Binary_erode, kernel);
+    imshow("Binary_blur", Binary_erode);
+    std::vector<Point> hand;
+    getHand(Binary_erode,hand);
+    //find the convex in hand
+    std::vector<Point> hull;
+    std::vector<int> hull_index(hand.size());
+    convexHull(hand, hull);
+    convexHull(hand, hull_index, false);
+    std::vector<Vec4i> defects(hand.size());
+    convexityDefects(Mat(hand), hull_index, defects);
+    //draw the defects
+    std::vector<Vec4i>::iterator d = defects.begin();
+
+    int cnt = 0;
+    while (d != defects.end()) {
+
+        Vec4i& v = (*d);
+        //if(IndexOfBiggestContour == i)
+        {
+
+            int startidx = v[0];
+            Point ptStart(hand[startidx]); // point of the contour where the defect begins
+            int endidx = v[1];
+            Point ptEnd(hand[endidx]); // point of the contour where the defect ends
+            int faridx = v[2];
+            Point ptFar(hand[faridx]);// the farthest from the convex hull point within the defect
+            int depth = v[3] / 256; // distance between the farthest point and the convex hull
+
+            if (depth > 50 && depth < 500)
+            {
+                line(frame, ptStart, ptFar, CV_RGB(0, 255, 0), 2);
+                //line(frame, ptEnd, ptFar, CV_RGB(0, 255, 0), 2);
+                circle(frame, ptStart, 4, Scalar(255, 0, 0), 2);
+                circle(frame, ptEnd, 4, Scalar(255, 0, 0), 2);
+                circle(frame, ptFar, 4, Scalar(100, 0, 255), 2);
+                cnt++;
+            }
+
+
+        }
+        //draw the cnt on the frame
+
+        d++;
+    }
+    return cnt;
+
+}
+
 int main()
 {
     cv::VideoCapture cap(0);
@@ -99,7 +175,7 @@ int main()
     cap.set(4,720);
 
     Point2f origin_point;
-    Point2f current_point(0,0);
+    Point2f current_point(0,0); //to store the center of the hand
 
 
     std::vector<Point2f> track;
@@ -119,6 +195,7 @@ int main()
         drawContours(frame,hand_contours,0,Scalar(0,0,255),2,8); //drawContours 不能过assertion，原因未知，不能正常显示
 
 
+
         //get the center of hand
         std::vector<Moments> mu(hand.size());
         for(int i = 0; i < hand.size(); i++)
@@ -132,8 +209,8 @@ int main()
         }
         origin_point = mc[0];
 
-        //if the current point is 3 pixel away from the origin point, then update the current point
-        if(abs(origin_point.x - current_point.x) > 3 || abs(origin_point.y - current_point.y) > 3)
+        //if the current point is 3 pixel away from the origin point, then update the current point, use this to reduce the shaking
+        if(abs(origin_point.x - current_point.x) > 5 || abs(origin_point.y - current_point.y) > 5)
         {
             current_point = origin_point;
             track.push_back(current_point); // push the current point to the track vector
@@ -144,24 +221,27 @@ int main()
         {
             circle(frame,track[i],2,Scalar(100,100,100),-1);
         }
-
-        circle(frame,mc[0],5,Scalar(255,0,0),-1); //center of the hand
+        circle(frame,current_point,5,Scalar(255,0,0),-1); //center of the hand
 
 
         //get the bounding area of hand
         Rect rect = boundingRect(hand); //boundingRect 返回手的最小矩形区域
         rectangle(frame,rect,Scalar(0,255,0),2,8); //draw the boundingRect
+
+
+
         //Mirror the frame symmetrically
         Mat frame_mirror;
+        int cnt = getConvexHull(binary,frame); //get the convexhull of the hand
         flip(frame,frame_mirror,1);
 
+        putText(frame_mirror, std::to_string(cnt), Point(10, 60), FONT_HERSHEY_SIMPLEX, 2, Scalar(0, 0, 255), 2);
+
+        //predict the result
+        //predictSVM(hand,frame_mirror);
 
         imshow("origin", frame_mirror);
 
-//        //do the fourier descriptor and show the result
-//        Mat FourierDescriptor;
-//        getFourierDescriptor(hand,FourierDescriptor);
-//        imshow("FourierDescriptor",FourierDescriptor);
 
 
         if (cv::waitKey(30) >= 0)

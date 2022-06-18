@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/C_Test.dir/cameraTest.cpp.obj"
   "CMakeFiles/C_Test.dir/cameraTest.cpp.obj.d"
+  "CMakeFiles/C_Test.dir/hull.cpp.obj"
+  "CMakeFiles/C_Test.dir/hull.cpp.obj.d"
   "C_Test.exe"
   "C_Test.exe.manifest"
   "C_Test.pdb"

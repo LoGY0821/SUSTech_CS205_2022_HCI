@@ -128,6 +128,30 @@ C_Test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/build
 .PHONY : C_Test/fast
 
+Testing/Temporary/HogTraining.obj: Testing/Temporary/HogTraining.cpp.obj
+.PHONY : Testing/Temporary/HogTraining.obj
+
+# target to build an object file
+Testing/Temporary/HogTraining.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.obj
+.PHONY : Testing/Temporary/HogTraining.cpp.obj
+
+Testing/Temporary/HogTraining.i: Testing/Temporary/HogTraining.cpp.i
+.PHONY : Testing/Temporary/HogTraining.i
+
+# target to preprocess a source file
+Testing/Temporary/HogTraining.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.i
+.PHONY : Testing/Temporary/HogTraining.cpp.i
+
+Testing/Temporary/HogTraining.s: Testing/Temporary/HogTraining.cpp.s
+.PHONY : Testing/Temporary/HogTraining.s
+
+# target to generate assembly for a file
+Testing/Temporary/HogTraining.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.s
+.PHONY : Testing/Temporary/HogTraining.cpp.s
+
 cameraTest.obj: cameraTest.cpp.obj
 .PHONY : cameraTest.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... C_Test
+	@echo ... Testing/Temporary/HogTraining.obj
+	@echo ... Testing/Temporary/HogTraining.i
+	@echo ... Testing/Temporary/HogTraining.s
 	@echo ... cameraTest.obj
 	@echo ... cameraTest.i
 	@echo ... cameraTest.s

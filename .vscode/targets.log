@@ -6,7 +6,7 @@ mingw32-make.exe all --print-data-base --no-builtin-variables --no-builtin-rules
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 05 15:25:13 2022
+# Make data base, printed on Fri Jun 17 22:04:44 2022
 
 # Variables
 
@@ -37,11 +37,11 @@ CURDIR := e:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Proje
 # makefile (from 'Makefile', line 47)
 SHELL = cmd.exe
 # makefile (from 'Makefile', line 53)
-RM = C:\Develop\CMake\bin\cmake.exe -E rm -f
+RM = "D:\Productivity\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 # environment
 WINDIR = C:\WINDOWS
 # environment
-VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"42e84e0914b17800d483f69e299e1b00.zh-cn","_translationsConfigFile":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\42e84e0914b17800d483f69e299e1b00.zh-cn\\tcf.json","_cacheRoot":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\42e84e0914b17800d483f69e299e1b00.zh-cn","_resolvedLanguagePackCoreLocation":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\42e84e0914b17800d483f69e299e1b00.zh-cn\\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\42e84e0914b17800d483f69e299e1b00.zh-cn\\corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_translationsConfigFile":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn\\tcf.json","_cacheRoot":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_resolvedLanguagePackCoreLocation":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn\\30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"C:\\Users\\Msi-pc\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn\\corrupted.info","_languagePackSupport":true}
 # environment
 ONEDRIVE = E:\Windows\OneDrive
 # environment
@@ -63,13 +63,13 @@ PROGRAMDATA = C:\ProgramData
 # makefile (from 'Makefile', line 35)
 MAKESILENT = -s
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-aa5fddf7-d986-48ff-96aa-7b5971d050c2-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-6b454be5-7c99-4c68-bb9e-1f89af718627-sock
 # environment
 VSCODE_CWD = C:\Users\Msi-pc\AppData\Local\Programs\Microsoft VS Code
 # default
 MAKE_HOST := x86_64-w64-mingw32
 # environment
-PATH = C:\Develop\Java\jdk-11.0.14\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Develop\mingw64\bin;D:\Productivity\MATLAB\R2021b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Develop\ffmpeg\bin;C:\Program Files\Git\cmd;E:\Tools\pandoc-2.17.0.1;C:\Program Files\wkhtmltopdf\bin;C:\Program Files\Microsoft Windows Performance Toolkit\;C:\Program Files\usbipd-win\;C:\Program Files\PuTTY\;D:\Productivity\OpenCV\opencv\mingw-build\install\x64\mingw\bin;D:\Productivity\OpenCV\opencv\build\x64\vc15\bin;C:\Develop\CMake\bin;C:\Users\Msi-pc\AppData\Local\SumatraPDF;C:\Develop\Python\Python39\Scripts\;C:\Develop\Python\Python39\;C:\Develop\Python\Python310\Scripts\;C:\Develop\Python\Python310\;C:\Python\Python310\Scripts\;C:\Python\Python310\;C:\Users\Msi-pc\AppData\Local\Microsoft\WindowsApps;;C:\Users\Msi-pc\AppData\Local\Programs\Microsoft VS Code\bin;D:\Productivity\texlive\2022\bin\win32
+PATH = C:\Develop\Java\jdk-11.0.14\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Develop\mingw64\bin;D:\Productivity\MATLAB\R2021b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Develop\ffmpeg\bin;C:\Program Files\Git\cmd;E:\Tools\pandoc-2.17.0.1;C:\Program Files\wkhtmltopdf\bin;C:\Program Files\Microsoft Windows Performance Toolkit\;C:\Program Files\usbipd-win\;C:\Program Files\PuTTY\;D:\Productivity\OpenCV\opencv\mingw-build\install\x64\mingw\bin;D:\Productivity\OpenCV\opencv\build\x64\vc15\bin;C:\Develop\CMake\bin;C:\Users\Msi-pc\AppData\Local\SumatraPDF;C:\Develop\nodejs\;C:\Develop\Python\Python39\Scripts\;C:\Develop\Python\Python39\;C:\Develop\Python\Python310\Scripts\;C:\Develop\Python\Python310\;C:\Python\Python310\Scripts\;C:\Python\Python310\;C:\Users\Msi-pc\AppData\Local\Microsoft\WindowsApps;C:\Users\Msi-pc\AppData\Local\Programs\Microsoft VS Code\bin;D:\Productivity\texlive\2022\bin\win32;D:\Productivity\Node.js\node_global;
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
@@ -93,7 +93,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16400_XQPLUJTAJRIZHDBQ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16616_BKQEWJBGPQRSWFUS
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -115,7 +115,7 @@ KMP_DUPLICATE_LIB_OK = TRUE
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Msi-pc\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = C:\Users\Msi-pc\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'Makefile', line 56)
@@ -165,7 +165,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\df45834eafb3da8dd0dfa23b8cb47391-1.67.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\df45834eafb3da8dd0dfa23b8cb47391-1.68.1-main-sock
 # environment
 HOMEPATH = \Users\Msi-pc
 # environment
@@ -185,6 +185,8 @@ SYSTEMROOT = C:\WINDOWS
 # environment
 APPDATA = C:\Users\Msi-pc\AppData\Roaming
 # environment
+__COMPAT_LAYER = DetectorsAppHealth
+# environment
 TEMP = C:\Users\Msi-pc\AppData\Local\Temp
 # environment
 COMSPEC = C:\WINDOWS\system32\cmd.exe
@@ -199,7 +201,7 @@ LC_ALL = C
 # environment
 CONFIGSETROOT = C:\WINDOWS\ConfigSetRoot
 # makefile (from 'Makefile', line 50)
-CMAKE_COMMAND = C:\Develop\CMake\bin\cmake.exe
+CMAKE_COMMAND = "D:\Productivity\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe"
 # automatic
 ^F = $(notdir $^)
 # default
@@ -217,11 +219,11 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-VSCODE_PID = 16400
+VSCODE_PID = 16616
 # environment
 USERDOMAIN_ROAMINGPROFILE = SMANGIC
 # variable set hash-table stats:
-# Load=105/1024=10%, Rehash=0, Collisions=18/134=13%
+# Load=106/1024=10%, Rehash=0, Collisions=18/135=13%
 
 # Pattern-specific Variable Values
 
@@ -230,10 +232,10 @@ USERDOMAIN_ROAMINGPROFILE = SMANGIC
 # Directories
 
 # SCCS: could not be stat'd.
-# . (key e:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI, mtime 1654409738): 14 files, no impossibilities.
+# . (key e:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI, mtime 1655473327): 25 files, no impossibilities.
 # RCS: could not be stat'd.
 
-# 14 files, no impossibilities in 3 directories.
+# 25 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -259,12 +261,18 @@ cmake_force:
 #  File does not exist.
 #  File has not been updated.
 
+Testing/Temporary/HogTraining.obj: Testing/Temporary/HogTraining.cpp.obj
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 cameraTest.cpp.obj:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 136):
+#  recipe to execute (from 'Makefile', line 160):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/cameraTest.cpp.obj
 
 edit_cache:
@@ -273,8 +281,8 @@ edit_cache:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 69):
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	C:\Develop\CMake\bin\cmake-gui.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"D:\Productivity\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 
 all: cmake_check_build_system
 #  Phony target (prerequisite of .PHONY).
@@ -290,10 +298,18 @@ all: cmake_check_build_system
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start "E:\Windows\OneDrive\Documents\Self Document\Programming Base\CPP\Project_HCI\SUSTech_CS205_2022_HCI\CMakeFiles" 0
 
-.PHONY: default_target cmake_force edit_cache edit_cache/fast rebuild_cache rebuild_cache/fast all clean clean/fast preinstall preinstall/fast depend C_Test C_Test/fast cameraTest.obj cameraTest.cpp.obj cameraTest.i cameraTest.cpp.i cameraTest.s cameraTest.cpp.s help cmake_check_build_system
+.PHONY: default_target cmake_force edit_cache edit_cache/fast rebuild_cache rebuild_cache/fast all clean clean/fast preinstall preinstall/fast depend C_Test C_Test/fast Testing/Temporary/HogTraining.obj Testing/Temporary/HogTraining.cpp.obj Testing/Temporary/HogTraining.i Testing/Temporary/HogTraining.cpp.i Testing/Temporary/HogTraining.s Testing/Temporary/HogTraining.cpp.s cameraTest.obj cameraTest.cpp.obj cameraTest.i cameraTest.cpp.i cameraTest.s cameraTest.cpp.s help cmake_check_build_system
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+Testing/Temporary/HogTraining.cpp.i:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 144):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.i
 
 preinstall/fast:
 #  Phony target (prerequisite of .PHONY).
@@ -303,6 +319,12 @@ preinstall/fast:
 #  recipe to execute (from 'Makefile', line 110):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 preinstall
 
+Testing/Temporary/HogTraining.i: Testing/Temporary/HogTraining.cpp.i
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 .SUFFIXES: .hpux_make_needs_suffix_list
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -311,7 +333,7 @@ preinstall/fast:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-05 14:15:38
+#  Last modified 2022-06-17 21:42:07
 #  File has been updated.
 #  Successfully updated.
 
@@ -357,7 +379,7 @@ cmake_check_build_system:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/14=21%
-#  recipe to execute (from 'Makefile', line 178):
+#  recipe to execute (from 'Makefile', line 205):
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 
 cameraTest.i: cameraTest.cpp.i
@@ -371,7 +393,7 @@ help:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 157):
+#  recipe to execute (from 'Makefile', line 181):
 	@echo The following are some of the valid targets for this Makefile:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
@@ -379,6 +401,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... C_Test
+	@echo ... Testing/Temporary/HogTraining.obj
+	@echo ... Testing/Temporary/HogTraining.i
+	@echo ... Testing/Temporary/HogTraining.s
 	@echo ... cameraTest.obj
 	@echo ... cameraTest.i
 	@echo ... cameraTest.s
@@ -405,6 +430,14 @@ C_Test/fast:
 #  recipe to execute (from 'Makefile', line 128):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/build
 
+Testing/Temporary/HogTraining.cpp.s:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 152):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.s
+
 .SILENT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -424,6 +457,14 @@ depend:
 #  Modification time never checked.
 #  File has not been updated.
 
+Testing/Temporary/HogTraining.cpp.obj:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 136):
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/Testing/Temporary/HogTraining.cpp.obj
+
 default_target: all
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -435,7 +476,7 @@ cameraTest.cpp.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 144):
+#  recipe to execute (from 'Makefile', line 168):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/cameraTest.cpp.i
 
 clean:
@@ -472,12 +513,18 @@ C_Test: cmake_check_build_system
 #  Modification time never checked.
 #  File has not been updated.
 
+Testing/Temporary/HogTraining.s: Testing/Temporary/HogTraining.cpp.s
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 cameraTest.cpp.s:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 152):
+#  recipe to execute (from 'Makefile', line 176):
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/cameraTest.cpp.s
 
 rebuild_cache:
@@ -487,22 +534,22 @@ rebuild_cache:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 79):
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Develop\CMake\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\Productivity\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 
 # files hash-table stats:
-# Load=29/1024=3%, Rehash=0, Collisions=5/101=5%
+# Load=35/1024=3%, Rehash=0, Collisions=7/125=6%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 51 / storage = 571 B / avg = 11 B
-# current buf: size = 8162 B / used = 571 B / count = 51 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 68 / storage = 918 B / avg = 13 B
+# current buf: size = 8162 B / used = 918 B / count = 68 / avg = 13 B
 
-# strcache performance: lookups = 163 / hit rate = 68%
+# strcache performance: lookups = 207 / hit rate = 67%
 # hash-table stats:
-# Load=51/8192=1%, Rehash=0, Collisions=3/163=2%
-# Finished Make data base on Sun Jun 05 15:25:13 2022
+# Load=68/8192=1%, Rehash=0, Collisions=3/207=1%
+# Finished Make data base on Fri Jun 17 22:04:44 2022
 
  
