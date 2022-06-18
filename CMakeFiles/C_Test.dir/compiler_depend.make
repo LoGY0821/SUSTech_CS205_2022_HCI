@@ -338,8 +338,6 @@ CMakeFiles/C_Test.dir/cameraTest.cpp.obj: cameraTest.cpp \
   D:/Productivity/OpenCV/opencv/mingw-build/install/include/opencv2/core/core_c.h \
   D:/Productivity/OpenCV/opencv/mingw-build/install/include/opencv2/core/types_c.h
 
-CMakeFiles/C_Test.dir/hull.cpp.obj: hull.cpp
-
 
 C:/Develop/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h:
 
@@ -978,8 +976,6 @@ C:/Develop/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/queue:
 C:/Develop/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_deque.h:
 
 C:/Develop/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_queue.h:
-
-hull.cpp:
 
 D:/Productivity/OpenCV/opencv/mingw-build/install/include/opencv2/stitching/detail/camera.hpp:
 

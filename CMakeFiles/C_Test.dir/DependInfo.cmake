@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/cameraTest.cpp" "CMakeFiles/C_Test.dir/cameraTest.cpp.obj" "gcc" "CMakeFiles/C_Test.dir/cameraTest.cpp.obj.d"
-  "E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/hull.cpp" "CMakeFiles/C_Test.dir/hull.cpp.obj" "gcc" "CMakeFiles/C_Test.dir/hull.cpp.obj.d"
   )
 
 # Targets to which this target links.

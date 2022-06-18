@@ -66,8 +66,8 @@ CMAKE_BINARY_DIR = "E:\Windows\OneDrive\Documents\Self Document\Programming Base
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\Productivity\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	C:\Develop\CMake\bin\cmake-gui.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -152,30 +152,6 @@ cameraTest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/cameraTest.cpp.s
 .PHONY : cameraTest.cpp.s
 
-hull.obj: hull.cpp.obj
-.PHONY : hull.obj
-
-# target to build an object file
-hull.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/hull.cpp.obj
-.PHONY : hull.cpp.obj
-
-hull.i: hull.cpp.i
-.PHONY : hull.i
-
-# target to preprocess a source file
-hull.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/hull.cpp.i
-.PHONY : hull.cpp.i
-
-hull.s: hull.cpp.s
-.PHONY : hull.s
-
-# target to generate assembly for a file
-hull.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\C_Test.dir\build.make CMakeFiles/C_Test.dir/hull.cpp.s
-.PHONY : hull.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -188,9 +164,6 @@ help:
 	@echo ... cameraTest.obj
 	@echo ... cameraTest.i
 	@echo ... cameraTest.s
-	@echo ... hull.obj
-	@echo ... hull.i
-	@echo ... hull.s
 .PHONY : help
 
 
