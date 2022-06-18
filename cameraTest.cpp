@@ -3,27 +3,27 @@ using namespace cv;
 #include <time.h>
 
 // get the area whose color is similar to hand color
-// void getSkin(Mat &ImageIn, Mat &Binary)
-// {
-//     Mat Image = ImageIn.clone();
-//     Mat ycrcb_Image;
-//     cvtColor(Image, ycrcb_Image, COLOR_BGR2YCrCb); //转换色彩空间
-//     std::vector<Mat> y_cr_cb;
-//     split(ycrcb_Image, y_cr_cb); //分离YCrCb
-//     Mat CR = y_cr_cb[1]; //图片的CR分量
-//     Mat CR1;
-//     Binary = Mat::zeros(Image.size(), CV_8UC1);
-//     GaussianBlur(CR, CR1, Size(3, 3), 0, 0);     //对CR分量进行高斯滤波，得到CR1（注意这里一定要新建一张图片存放结果）
-//     threshold(CR1, Binary, 0, 255, THRESH_OTSU); //用系统自带的threshold函数，对CR分量进行二值化，算法为自适应阈值的OTSU算法
-// }
-
 void getSkin(Mat &ImageIn, Mat &Binary)
 {
     Mat Image = ImageIn.clone();
-    Mat hsvImage;
-    cvtColor(Image, hsvImage, COLOR_BGR2HSV); //转换色彩空间
-    inRange(hsvImage, Scalar(0, 43, 55), Scalar(25, 255, 255), Binary);
+    Mat ycrcb_Image;
+    cvtColor(Image, ycrcb_Image, COLOR_BGR2YCrCb); //转换色彩空间
+    std::vector<Mat> y_cr_cb;
+    split(ycrcb_Image, y_cr_cb); //分离YCrCb
+    Mat CR = y_cr_cb[1];         //图片的CR分量
+    Mat CR1;
+    Binary = Mat::zeros(Image.size(), CV_8UC1);
+    GaussianBlur(CR, CR1, Size(3, 3), 0, 0);     //对CR分量进行高斯滤波，得到CR1（注意这里一定要新建一张图片存放结果）
+    threshold(CR1, Binary, 0, 255, THRESH_OTSU); //用系统自带的threshold函数，对CR分量进行二值化，算法为自适应阈值的OTSU算法
 }
+
+// void getSkin(Mat &ImageIn, Mat &Binary)
+// {
+//     Mat Image = ImageIn.clone();
+//     Mat hsvImage;
+//     cvtColor(Image, hsvImage, COLOR_BGR2HSV); //转换色彩空间
+//     inRange(hsvImage, Scalar(0, 43, 55), Scalar(25, 255, 255), Binary);
+// }
 
 // get the contour of hand through a set of contours, according to the area of contours
 
@@ -83,6 +83,7 @@ void recordPoint(Point2f &point, Point2f &origin_point, std::vector<Point2f> &tr
 {
     if (abs(point.x - origin_point.x) > 5 || abs(point.y - origin_point.y) > 5)
     {
+
         origin_point = point;
         track.push_back(origin_point); // push the current point to the track vector
     }
@@ -96,17 +97,17 @@ void drawTrace(std::vector<Point2f> &track, Mat &frame)
     }
 }
 
-void shapeRecog(std::vector<Point2f> &track, std::vector<Point2f> &output, std::string &shape)
+void shapeRecog(std::vector<Point2f> &ori_trace, std::vector<Point2f> &recog_trace, std::string &shape)
 {
-    approxPolyDP(track, output, 5, true);
-    int count = (int)output.size();
+    approxPolyDP(ori_trace, recog_trace, 50, true);
+    int count = (int)recog_trace.size();
     switch (count)
     {
     case 3:
         shape = "Triangle";
         break;
     case 4:
-        shape = "Square";
+        shape = "Rectangle";
         break;
     case 5:
         shape = "Pentagon";
@@ -115,6 +116,36 @@ void shapeRecog(std::vector<Point2f> &track, std::vector<Point2f> &output, std::
         shape = "Circle";
         break;
     }
+}
+
+void contourGene(std::vector<Point2f> &points, std::vector<std::vector<Point>> &trace)
+{
+    std::vector<Point> line;
+    for (int i = 0; i < points.size(); i++)
+    {
+        line.push_back(Point((int)points[i].x, (int)points[i].y));
+    }
+    trace.push_back(line);
+}
+
+void drawCircle(Mat &Image, std::vector<Point2f> &points)
+{
+    int centerX;
+    int centerY;
+    int radius;
+    for (int i = 0; i < points.size(); i++)
+    {
+        centerX += points[i].x;
+        centerY += points[i].y;
+    }
+    centerX /= points.size();
+    centerY /= points.size();
+    for (int i = 0; i < points.size(); i++)
+    {
+        radius += sqrt(pow((points[i].x - centerX), 2) + pow((points[i].y - centerY), 2));
+    }
+    radius /= points.size();
+    circle(Image, Point(centerX, centerY), radius, Scalar(0, 255, 255), 4);
 }
 
 int main()
@@ -163,12 +194,21 @@ int main()
             rectangle(frame, rect, Scalar(0, 255, 0), 2, 8); // draw the boundingRect
         }
         now = clock();
-        std::vector<Point2f> output;
+        std::vector<Point2f> trace_ori;
+        std::vector<std::vector<Point>> output;
         std::string shape = "null";
         if (double(now - start) / CLOCKS_PER_SEC >= 5)
         {
-            shapeRecog(track, output, shape);
-            // drawContours(frame, output, -1, Scalar(0, 255, 255), 2, 8);
+            shapeRecog(track, trace_ori, shape);
+            contourGene(trace_ori, output);
+            if (trace_ori.size() > 4)
+            {
+                drawCircle(frame, trace_ori);
+            }
+            else
+            {
+                drawContours(frame, output, -1, Scalar(0, 255, 255), 4, 8);
+            }
             std::cout << shape << std::endl;
         }
 
