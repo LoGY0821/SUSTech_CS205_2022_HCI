@@ -1,9 +1,0 @@
-"D:\Productivity\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Develop/mingw64/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/Develop/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/Develop/mingw64/bin/g++.exe -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ../ -G "CodeBlocks - MinGW Makefiles" -S "E:\Windows\OneDrive\Documents\Self Document\Programming Base\CPP\Project_HCI\SUSTech_CS205_2022_HCI" -B "E:\Windows\OneDrive\Documents\Self Document\Programming Base\CPP\Project_HCI\SUSTech_CS205_2022_HCI"
--- OpenCV ARCH: x64
--- OpenCV RUNTIME: mingw
--- OpenCV STATIC: OFF
--- Found OpenCV 4.1.1 in D:/Productivity/OpenCV/opencv/mingw-build/install/x64/mingw/lib
--- You might need to add D:/Productivity/OpenCV/opencv/mingw-build/install/x64/mingw/bin to your PATH to be able to run your applications.
--- Configuring done
--- Generating done
--- Build files have been written to: E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI

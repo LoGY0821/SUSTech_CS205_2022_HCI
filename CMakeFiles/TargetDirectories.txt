@@ -1,3 +1,0 @@
-E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/CMakeFiles/C_Test.dir
-E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/CMakeFiles/edit_cache.dir
-E:/Windows/OneDrive/Documents/Self Document/Programming Base/CPP/Project_HCI/SUSTech_CS205_2022_HCI/CMakeFiles/rebuild_cache.dir

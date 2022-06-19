@@ -15,29 +15,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72d848e5-1cea-4562-b0b6-673fbf1083e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.cmake/api/v1/reply/codemodel-v2-5ae3f9a7a1bb4f02577d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.cmake/api/v1/reply/index-2022-06-18T02-12-06-0435.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.cmake/api/v1/reply/target-C_Test-Debug-d84105b3f98330559f34.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cmake/api/v1/reply/codemodel-v2-6abbc5897792533986dd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cmake/api/v1/reply/index-2022-06-17T14-33-58-0401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cmake/api/v1/reply/target-C_Test-Debug-74788e5457ab693ca4b1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cmake/api/v1/reply/codemodel-v2-5ae3f9a7a1bb4f02577d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cmake/api/v1/reply/index-2022-06-18T02-12-06-0435.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cmake/api/v1/reply/index-2022-06-18T08-52-36-0412.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cmake/api/v1/reply/target-C_Test-Debug-d84105b3f98330559f34.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/configurationCache.log" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/configurationCache.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/dryrun.log" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/dryrun.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/targets.log" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/targets.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cameraTest.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cameraTest.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/compiler_depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/compiler_depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cameraTest.cpp.obj.d" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/cameraTest.cpp.obj.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/compiler_depend.internal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/compiler_depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/C_Test.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C_Test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/C_Test.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cameraTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cameraTest.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C_Test.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C_Test.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineSource.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readfolder.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/codemodel-v2-e459562eb10e3ddcc6b0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/index-2022-06-17T14-04-47-0228.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/target-C_Test-Debug-e1593a6d099b0c18a9ca.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/C_Test.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,12 +119,12 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.C_Test">
-    <configuration name="C_Test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C_Test" TARGET_NAME="C_Test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="C_Test" RUN_TARGET_NAME="C_Test">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="C_Test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C_Test" TARGET_NAME="C_Test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="C_Test" RUN_TARGET_NAME="C_Test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -164,7 +174,8 @@
       <workItem from="1655110342947" duration="2075000" />
       <workItem from="1655451690153" duration="2172000" />
       <workItem from="1655453887842" duration="21557000" />
-      <workItem from="1655517067113" duration="2792000" />
+      <workItem from="1655517067113" duration="21852000" />
+      <workItem from="1655608169955" duration="280000" />
     </task>
     <servers />
   </component>
@@ -206,18 +217,13 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Readfolder.cpp</url>
-          <line>54</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/cameraTest.cpp</url>
-          <line>214</line>
+          <url>file://$PROJECT_DIR$/HCI.cpp</url>
+          <line>278</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/cameraTest.cpp</url>
-          <line>210</line>
+          <url>file://$PROJECT_DIR$/HCI.cpp</url>
+          <line>274</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
